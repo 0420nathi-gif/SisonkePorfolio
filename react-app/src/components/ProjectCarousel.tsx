@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowIcon from './ArrowIcon';
 import projects from './projects';
 
 function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
+    },1000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   function showPrevious() {
     setActiveIndex((currentIndex) => (currentIndex - 1 + projects.length) % projects.length);
