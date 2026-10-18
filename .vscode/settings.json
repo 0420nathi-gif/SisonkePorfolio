@@ -1,0 +1,17 @@
+{
+  "vim.useCtrlKeys": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-d>"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
+    },
+    {
+      "before": ["<C-x>"],
+      "commands": ["editor.action.clipboardCutAction"]
+    },
+    {
+      "before": ["<C-v>"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    }
+  ]
+}
