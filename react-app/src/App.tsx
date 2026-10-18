@@ -15,6 +15,9 @@ function getPageFromHash(): Page {
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash);
+  const [darkMode, setDarkMode] = useState(
+    () => window.localStorage.getItem('portfolio-theme') === 'dark',
+  );
 
   useEffect(() => {
     const syncPage = () => {
@@ -27,9 +30,18 @@ function App() {
     return () => window.removeEventListener('hashchange', syncPage);
   }, []);
 
+  useEffect(() => {
+    window.localStorage.setItem('portfolio-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   return (
-    <div className="site">
-      <Header currentPage={currentPage} pages={pages} />
+    <div className={darkMode ? 'site theme-dark' : 'site'}>
+      <Header
+        currentPage={currentPage}
+        pages={pages}
+        darkMode={darkMode}
+        onToggleTheme={() => setDarkMode((isDarkMode) => !isDarkMode)}
+      />
       <main key={currentPage}>
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'about' && <AboutPage />}
