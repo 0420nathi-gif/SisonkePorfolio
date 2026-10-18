@@ -124,6 +124,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-arrow { width: 34px; height: 34px; border: 1px solid #d5d4cd; border-radius: 50%; display: grid; place-items: center; }
 .project-arrow .arrow-icon { width: 15px; height: 15px; }
 .project-card:hover .project-arrow { background: var(--accent); border-color: var(--accent); }
+.project-carousel { max-width: 800px; margin: 0 auto; }
+.project-carousel-viewport { overflow: hidden; }
+.project-carousel-slide .project-art { height: 390px; }
+.project-carousel-controls { display: flex; align-items: center; gap: 20px; padding-top: 18px; }
+.project-carousel-dots { display: flex; align-items: center; gap: 8px; margin-right: auto; }
+.carousel-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: #cdcdc4; cursor: pointer; transition: width .2s ease, background .2s ease; }
+.carousel-dot.active { width: 22px; border-radius: 5px; background: #7d963e; }
+.carousel-arrow { width: 37px; height: 37px; display: grid; place-items: center; padding: 0; border: 1px solid #d5d4cd; border-radius: 50%; color: var(--ink); background: transparent; cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+.carousel-arrow:hover { color: var(--ink); background: var(--accent); border-color: var(--accent); }
+.carousel-arrow .arrow-icon { width: 15px; height: 15px; }
+.carousel-arrow:not(.carousel-arrow-next) .arrow-icon { transform: rotate(135deg); }
+.carousel-count { min-width: 48px; color: #85867e; font: 9px var(--mono); text-align: right; }
 
 .inner-page { padding-block: 81px 100px; min-height: calc(100vh - 160px); }
 .inner-page > .eyebrow { margin-bottom: 29px; }
@@ -189,6 +201,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-index { right: -33px; }
   .hero-note { margin-top: 44px; }
   .project-art { height: 250px; }
+  .project-carousel-slide .project-art { height: 320px; }
   .about-layout { gap: 5%; }
   .about-art { min-height: 225px; }
   .work-page .project-art { height: 280px; }
@@ -214,6 +227,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .section-heading h2 { font-size: 43px; }
   .project-grid, .work-page .project-grid { grid-template-columns: 1fr; gap: 29px; }
   .project-art { height: 270px; }
+  .project-carousel-slide .project-art { height: 270px; }
+  .project-carousel-controls { gap: 13px; }
+  .carousel-arrow { width: 34px; height: 34px; }
   .inner-page { padding-block: 58px 70px; }
   .page-title { font-size: clamp(48px, 12vw, 66px); }
   .about-layout { grid-template-columns: 1fr; gap: 34px; }

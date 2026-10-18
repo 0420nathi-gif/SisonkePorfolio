@@ -1,5 +1,5 @@
 import ArrowIcon from '../ArrowIcon';
-import ProjectGrid from '../ProjectGrid';
+import ProjectCarousel from '../ProjectCarousel';
 
 function FeaturedWork() {
   return (
@@ -11,7 +11,7 @@ function FeaturedWork() {
         </div>
         <a className="text-link" href="#work">See all projects <ArrowIcon /></a>
       </div>
-      <ProjectGrid limit={2} />
+      <ProjectCarousel />
     </section>
   );
 }
