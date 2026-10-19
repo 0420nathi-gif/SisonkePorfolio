@@ -46,6 +46,10 @@ function HomePage() {
         </div>
         <div className="hero-visual">
           <img className="hero-portrait-image" src={portraitImage} alt="Portrait of Sisonke Miya" />
+          <span className="hero-portrait-caption">
+            <span className="availability-dot" />
+            Graphic design · Development
+          </span>
         </div>
         <div className="hero-index"><span>01</span><span className="index-rule" /><span>04</span></div>
       </section>

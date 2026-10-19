@@ -20,6 +20,7 @@ body { margin: 0; min-width: 320px; }
 body, button, a { font-family: 'Manrope', sans-serif; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offset: 4px; }
 ::selection { color: var(--ink); background: var(--accent); }
 
 .site { min-height: 100vh; overflow: hidden; }
@@ -78,6 +79,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero-visual { height: 490px; position: relative; overflow: hidden; border-radius: 22px; background: #e5e5d9; }
 .hero-portrait-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.hero-portrait-caption { position: absolute; bottom: 17px; left: 17px; display: inline-flex; align-items: center; gap: 9px; padding: 10px 13px; border: 1px solid rgba(255, 255, 255, .5); border-radius: 7px; color: #fff; background: rgba(34, 35, 31, .72); font: 9px var(--mono); letter-spacing: .025em; backdrop-filter: blur(8px); }
+.hero-portrait-caption .availability-dot { flex: 0 0 auto; box-shadow: 0 0 0 3px rgba(229, 236, 214, .22); }
 .trailing-cursor { position: fixed; z-index: 1000; inset: 0 auto auto 0; pointer-events: none; }
 .cursor-tail-dot, .cursor-head { position: fixed; top: 0; left: 0; display: block; border-radius: 50%; opacity: 0; pointer-events: none; transform: translate3d(var(--cursor-x, -20px), var(--cursor-y, -20px), 0) translate(-50%, -50%); transition: transform .12s ease-out, opacity .2s ease; }
 .cursor-head { width: 11px; height: 11px; background: #a6d750; }
@@ -126,6 +129,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 17px; }
 .project-meta h3 { margin: 0 0 5px; font-size: 16px; font-weight: 500; letter-spacing: -.03em; }
 .project-meta p { margin: 0; color: #85867e; font-size: 10px; }
+.project-art-image { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+.project-card:hover .project-art-image { transform: scale(1.025); }
 .project-arrow { width: 34px; height: 34px; border: 1px solid #d5d4cd; border-radius: 50%; display: grid; place-items: center; }
 .project-arrow .arrow-icon { width: 15px; height: 15px; }
 .project-card:hover .project-arrow { background: var(--accent); border-color: var(--accent); }
