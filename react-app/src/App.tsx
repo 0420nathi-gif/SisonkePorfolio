@@ -5,6 +5,7 @@ import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import HomePage from './components/pages/HomePage';
 import WorkPage from './components/pages/WorkPage';
+import TrailingCursor from './components/TrailingCursor';
 import { pages, type Page } from './components/pageConfig';
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className={darkMode ? 'site theme-dark' : 'site'}>
+      <TrailingCursor />
       <Header
         currentPage={currentPage}
         pages={pages}

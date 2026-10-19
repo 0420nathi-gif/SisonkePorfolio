@@ -1,5 +1,6 @@
 import ArrowIcon from '../ArrowIcon';
 import ProjectCarousel from '../ProjectCarousel';
+import portraitImage from '../../assets/Images/Image of me.jpg';
 
 function FeaturedWork() {
   return (
@@ -42,25 +43,8 @@ function HomePage() {
             <span>Based in Brooklyn, NY<br />Working everywhere</span>
           </div>
         </div>
-        <div className="hero-visual" aria-label="Abstract portrait illustration">
-          <div className="visual-orbit orbit-one" />
-          <div className="visual-orbit orbit-two" />
-          <div className="visual-sun" />
-          <div className="portrait-shape">
-            <div className="portrait-hair" />
-            <div className="portrait-face">
-              <span className="portrait-eye eye-left" />
-              <span className="portrait-eye eye-right" />
-              <span className="portrait-nose" />
-              <span className="portrait-smile" />
-            </div>
-            <div className="portrait-neck" />
-            <div className="portrait-shirt" />
-          </div>
-          <span className="visual-label label-top">DESIGN WITH INTENTION</span>
-          <span className="visual-label label-bottom">EST. 2018 — NYC</span>
-          <span className="visual-star star-one">✳</span>
-          <span className="visual-star star-two">✳</span>
+        <div className="hero-visual">
+          <img className="hero-portrait-image" src={portraitImage} alt="Portrait of me" />
         </div>
         <div className="hero-index"><span>01</span><span className="index-rule" /><span>04</span></div>
       </section>

@@ -1,3 +1,5 @@
+import carouselImage from '../assets/Images/Img1 for Carousel.svg';
+
 export type Project = {
   number: string;
   title: string;
@@ -5,6 +7,7 @@ export type Project = {
   className: string;
   mark: string;
   description: string;
+  image?: string;
 };
 
 const projects: Project[] = [
@@ -15,6 +18,7 @@ const projects: Project[] = [
     className: 'project-art-sunday',
     mark: 'SUNDAY',
     description: 'A brighter kind of everyday.',
+    image: carouselImage,
   },
   {
     number: '02',

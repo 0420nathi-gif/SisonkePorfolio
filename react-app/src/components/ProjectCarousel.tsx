@@ -9,7 +9,7 @@ function ProjectCarousel() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
-    },1000);
+    }, 5000);
 
     return () => window.clearInterval(intervalId);
   }, []);
@@ -32,12 +32,18 @@ function ProjectCarousel() {
           aria-label={`${activeIndex + 1} of ${projects.length}`}
           key={activeProject.number}
         >
-          <div className={`project-art ${activeProject.className}`}>
-            <span className="project-art-mark">
-              {activeProject.mark.split('\n').map((line) => <span key={line}>{line}</span>)}
-            </span>
-            <span className="project-art-description">{activeProject.description}</span>
-            <span className="project-art-number">{activeProject.number}</span>
+          <div className={`project-art ${activeProject.image ? 'project-art-image-slide' : activeProject.className}`}>
+            {activeProject.image ? (
+              <img className="project-art-image" src={activeProject.image} alt={`${activeProject.title} project artwork`} />
+            ) : (
+              <>
+                <span className="project-art-mark">
+                  {activeProject.mark.split('\n').map((line) => <span key={line}>{line}</span>)}
+                </span>
+                <span className="project-art-description">{activeProject.description}</span>
+                <span className="project-art-number">{activeProject.number}</span>
+              </>
+            )}
           </div>
           <div className="project-meta">
             <div>
