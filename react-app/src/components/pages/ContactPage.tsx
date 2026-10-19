@@ -8,7 +8,7 @@ function ContactPage() {
         <div>
           <h1 className="page-title">Have a good<br />one in <span className="serif-word">mind?</span></h1>
           <p className="large-copy">Tell me what you’re dreaming up. I’d love to hear about it.</p>
-          <a className="contact-email" href="0420nathi@gmail.com">
+          <a className="contact-email" href="mailto:0420nathi@gmail.com">
             0420nathi@gmail.com <ArrowIcon diagonal />
           </a>
         </div>
@@ -17,13 +17,12 @@ function ContactPage() {
           <p className="eyebrow">Currently booking</p>
           <h2>Select projects<br />for 2026</h2>
           <p>For collaborations, kind words, or a really good book recommendation.</p>
-          <a href="0420nathi@gmail.com" className="button button-light">Say hello <ArrowIcon /></a>
+          <a href="mailto:0420nathi@gmail.com" className="button button-light">Say hello <ArrowIcon /></a>
         </div>
       </div>
       <div className="contact-footer">
         <span>Johannesburg, GP</span>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon diagonal /></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram <ArrowIcon diagonal /></a>
+        <a href="https://github.com/Sisonke0420" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon diagonal /></a>
       </div>
     </section>
   );

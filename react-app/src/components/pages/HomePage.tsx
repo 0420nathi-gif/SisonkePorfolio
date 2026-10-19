@@ -29,7 +29,7 @@ function HomePage() {
             <span className="accent-word">changing</span> world<span className="accent-period">.</span>
           </h1>
           <p className="hero-description">
-            I’m Sonke, a graphic designer and developer bringing ideas to life
+            I’m Sisonke, a graphic designer and developer bringing ideas to life
             through thoughtful visual identities, clear design systems, and
             responsive digital experiences.
           </p>
@@ -41,11 +41,11 @@ function HomePage() {
           </div>
           <div className="hero-note">
             <span className="note-spark">✳</span>
-            <span>Based in Johannesburg,GP<br />Working everywhere</span>
+            <span>Based in Johannesburg, GP<br />Working everywhere</span>
           </div>
         </div>
         <div className="hero-visual">
-          <img className="hero-portrait-image" src={portraitImage} alt="Portrait of me" />
+          <img className="hero-portrait-image" src={portraitImage} alt="Portrait of Sisonke Miya" />
         </div>
         <div className="hero-index"><span>01</span><span className="index-rule" /><span>04</span></div>
       </section>

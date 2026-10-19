@@ -16,7 +16,7 @@ function AboutPage() {
         </div>
         <div className="about-card">
           <div className="about-art"><span>MAKE<br />IT<br /><em>MEAN</em><br />SOMETHING.</span><i>✳</i></div>
-          <p>Curiosity is part of the process.<br /><span>Johannesburg,GP· Everywhere, really</span></p>
+          <p>Curiosity is part of the process.<br /><span>Johannesburg, GP · Everywhere, really</span></p>
         </div>
       </div>
       <div className="about-details">
