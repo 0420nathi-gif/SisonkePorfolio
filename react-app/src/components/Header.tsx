@@ -10,8 +10,8 @@ type HeaderProps = {
 function Header({ currentPage, pages, darkMode, onToggleTheme }: HeaderProps) {
   return (
     <header className="site-header">
-      <a className="wordmark" href="#home" aria-label="Alex Morgan home">
-        am<span className="wordmark-dot">.</span>
+      <a className="wordmark" href="#home" aria-label="Sisonke Miya home">
+        sm<span className="wordmark-dot">.</span>
       </a>
       <nav className="main-nav" aria-label="Main navigation">
         {pages.map((page) => (

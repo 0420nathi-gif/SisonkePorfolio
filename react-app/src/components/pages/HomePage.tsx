@@ -22,15 +22,16 @@ function HomePage() {
     <>
       <section className="hero page-shell">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-line" /> Independent designer &amp; developer</p>
+          <p className="eyebrow"><span className="eyebrow-line" /> Graphic designer &amp; developer</p>
           <h1>
             Thoughtful<br />
             design for a<br />
             <span className="accent-word">changing</span> world<span className="accent-period">.</span>
           </h1>
           <p className="hero-description">
-            I’m Alex, a multidisciplinary creative building memorable brands
-            and digital experiences with a little more feeling.
+            I’m Sonke, a graphic designer and developer bringing ideas to life
+            through thoughtful visual identities, clear design systems, and
+            responsive digital experiences.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="#work">
@@ -40,7 +41,7 @@ function HomePage() {
           </div>
           <div className="hero-note">
             <span className="note-spark">✳</span>
-            <span>Based in Brooklyn, NY<br />Working everywhere</span>
+            <span>Based in Johannesburg,GP<br />Working everywhere</span>
           </div>
         </div>
         <div className="hero-visual">
@@ -52,7 +53,7 @@ function HomePage() {
       <section className="intro-strip">
         <div className="page-shell intro-inner">
           <p>Good work starts with <em>good questions.</em></p>
-          <a href="#about" className="round-link" aria-label="Learn about Alex">
+          <a href="#about" className="round-link" aria-label="Learn about Sisonke Miya">
             <ArrowIcon diagonal />
           </a>
         </div>
