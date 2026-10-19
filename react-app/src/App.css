@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
 
 :root {
   font-family: 'Manrope', sans-serif;
@@ -97,7 +97,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .intro-strip { background: var(--accent); }
 .intro-inner { min-height: 124px; display: flex; align-items: center; justify-content: space-between; }
 .intro-inner p { margin: 0; font-size: clamp(22px, 3vw, 36px); letter-spacing: -.045em; }
-.intro-inner em, .serif-word { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+.intro-inner em, .serif-word { font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 500; }
 .round-link { width: 44px; height: 44px; border: 1px solid rgba(34, 35, 31, .35); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; transition: color .2s ease, background .2s ease, transform .2s ease; }
 .round-link:hover { color: var(--paper); background: var(--ink); transform: rotate(45deg); }
 .featured-section { padding-block: 108px 112px; }
@@ -118,7 +118,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-art-offscript::after { content: ''; position: absolute; right: 18%; top: 10%; width: 85px; height: 85px; border-radius: 50%; background: #d2ed8c; }
 .project-art-mark { position: relative; z-index: 1; color: inherit; font-size: 34px; font-weight: 600; letter-spacing: -.08em; }
 .project-art-sunday .project-art-mark { color: #37422c; }
-.project-art-forma .project-art-mark { font-family: 'Playfair Display', Georgia, serif; font-size: 58px; font-weight: 500; }
+.project-art-forma .project-art-mark { font-family: 'Space Grotesk', sans-serif; font-size: 58px; font-weight: 500; }
 .project-art-offscript .project-art-mark { color: #263a45; font: 600 36px/.86 var(--mono); letter-spacing: -.12em; }
 .project-art-offscript .project-art-mark span { display: block; }
 .project-art-description { position: absolute; z-index: 2; bottom: 23px; left: 24px; font-size: 11px; }
@@ -153,7 +153,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-card { padding: 15px; background: #e7e5dc; }
 .about-art { position: relative; min-height: 270px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #ced9b3; }
 .about-art span { font-size: 34px; font-weight: 600; letter-spacing: -.08em; line-height: .93; }
-.about-art em { font: italic 39px 'Playfair Display', Georgia, serif; }
+.about-art em { font: 39px 'Space Grotesk', sans-serif; }
 .about-art i { position: absolute; top: 28px; right: 27px; font-size: 35px; font-style: normal; color: #728a49; }
 .about-card > p { margin: 13px 0 1px; font-size: 11px; }
 .about-card > p span { color: #84857c; font-size: 9px; }
