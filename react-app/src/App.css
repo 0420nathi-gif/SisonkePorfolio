@@ -83,12 +83,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .hero-portrait-caption .availability-dot { flex: 0 0 auto; box-shadow: 0 0 0 3px rgba(229, 236, 214, .22); }
 .trailing-cursor { position: fixed; z-index: 1000; inset: 0 auto auto 0; pointer-events: none; }
 .cursor-tail-dot, .cursor-head { position: fixed; top: 0; left: 0; display: block; border-radius: 50%; opacity: 0; pointer-events: none; transform: translate3d(var(--cursor-x, -20px), var(--cursor-y, -20px), 0) translate(-50%, -50%); transition: transform .12s ease-out, opacity .2s ease; }
-.cursor-head { width: 11px; height: 11px; background: #a6d750; }
+.cursor-head { width: 18px; height: 18px; background: #a6d750; }
 .cursor-tail-dot { background: #8cac3e; }
-.cursor-tail-one { width: 8px; height: 8px; transition-duration: .2s, .2s; }
-.cursor-tail-two { width: 6px; height: 6px; opacity: 0; transition-duration: .29s, .2s; }
-.cursor-tail-three { width: 5px; height: 5px; transition-duration: .38s, .2s; }
-.cursor-tail-four { width: 3px; height: 3px; transition-duration: .47s, .2s; }
+.cursor-tail-one { width: 13px; height: 13px; transition-duration: .2s, .2s; }
+.cursor-tail-two { width: 10px; height: 10px; opacity: 0; transition-duration: .29s, .2s; }
+.cursor-tail-three { width: 8px; height: 8px; transition-duration: .38s, .2s; }
+.cursor-tail-four { width: 6px; height: 6px; transition-duration: .47s, .2s; }
 .trailing-cursor.is-visible .cursor-head { opacity: 1; }
 .trailing-cursor.is-visible .cursor-tail-dot { opacity: .72; }
 .trailing-cursor.is-visible .cursor-tail-two { opacity: .52; }
@@ -179,6 +179,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .discipline-card ul { display: grid; gap: 10px; padding: 18px 0 0; margin: 18px 0 0; border-top: 1px solid #deddd5; list-style: none; }
 .discipline-card li { position: relative; padding-left: 15px; font-size: 11px; line-height: 1.6; }
 .discipline-card li::before { content: ''; position: absolute; top: .65em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #91ad55; }
+.about-tools { padding-top: 69px; }
+.about-tools > .eyebrow { margin-bottom: 17px; }
+.about-tools > h2 { margin: 0 0 30px; font-size: clamp(38px, 5vw, 58px); font-weight: 500; line-height: 1.04; letter-spacing: -.065em; }
+.tool-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 0; margin: 0; list-style: none; }
+.tool-list li { display: flex; flex-direction: column; gap: 9px; padding: 19px 17px; border: 1px solid #deddd5; border-radius: 10px; }
+.tool-list li span:first-child { font-size: 13px; }
+.tool-list li span:last-child { color: #777870; font-size: 10px; }
 .work-page { padding-bottom: 80px; }
 .work-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 51px; }
 .work-heading > p { width: 240px; margin: 0 4% 6px 20px; color: #777870; font-size: 12px; line-height: 1.8; }
@@ -259,6 +266,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
   .about-details { grid-template-columns: 1fr; gap: 39px; padding-block: 57px 60px; }
   .discipline-grid { grid-template-columns: 1fr; }
   .discipline-card > p:not(.discipline-number) { min-height: 0; }
+  .about-tools { padding-top: 52px; }
+  .tool-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-heading { display: block; margin-bottom: 34px; }
   .work-heading > p { margin: 17px 0 0; }
   .work-page .project-art { height: 295px; }
@@ -313,9 +322,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .theme-dark .skill-list li,
 .theme-dark .contact-email { border-color: var(--line); }
 .theme-dark .discipline-card,
-.theme-dark .discipline-card ul { border-color: var(--line); }
+.theme-dark .discipline-card ul,
+.theme-dark .tool-list li { border-color: var(--line); }
 .theme-dark .discipline-number,
-.theme-dark .discipline-card > p:not(.discipline-number) { color: var(--muted); }
+.theme-dark .discipline-card > p:not(.discipline-number),
+.theme-dark .tool-list li span:last-child { color: var(--muted); }
 .theme-dark .contact-footer { border-top-color: var(--line); }
 .theme-dark .contact-card { background: #282b25; }
 .theme-dark .round-link-light { border-color: rgba(34, 35, 31, .45); }

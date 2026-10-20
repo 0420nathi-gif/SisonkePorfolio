@@ -62,6 +62,16 @@ function AboutPage() {
           </article>
         </div>
       </section>
+      <section className="about-tools" aria-labelledby="tools-heading">
+        <p className="eyebrow"><span className="eyebrow-line" /> A few favorites in my toolkit</p>
+        <h2 id="tools-heading">The tools behind<br /><span className="serif-word">the work.</span></h2>
+        <ul className="tool-list">
+          <li><span>DaVinci Resolve</span><span>Video editing</span></li>
+          <li><span>Affinity</span><span>Graphic design</span></li>
+          <li><span>Canva</span><span>Visual content</span></li>
+          <li><span>Figma</span><span>Interface design</span></li>
+        </ul>
+      </section>
       <Callout />
     </section>
   );
