@@ -1,6 +1,6 @@
 import ArrowIcon from '../ArrowIcon';
 import ProjectCarousel from '../ProjectCarousel';
-import portraitImage from '../../assets/Images/Image of me.jpg';
+import portraitImage from '../../assets/Images/99efc472-09d3-4a03-acbb-d9f7c7615ab7.webp';
 
 function FeaturedWork() {
   return (
@@ -45,7 +45,7 @@ function HomePage() {
           </div>
         </div>
         <div className="hero-visual">
-          <img className="hero-portrait-image" src={portraitImage} alt="Portrait of Sisonke Miya" />
+          <img className="hero-portrait-image" src={portraitImage} alt="Dutch Design Awards poster displayed on a building" />
           <span className="hero-portrait-caption">
             <span className="availability-dot" />
             Graphic design · Development

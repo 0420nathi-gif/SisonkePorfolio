@@ -1,4 +1,5 @@
 import Callout from '../Callout';
+import portraitImage from '../../assets/Images/Image of me.jpg';
 
 function AboutPage() {
   return (
@@ -15,8 +16,8 @@ function AboutPage() {
           </p>
         </div>
         <div className="about-card">
-          <div className="about-art"><span>MAKE<br />IT<br /><em>MEAN</em><br />SOMETHING.</span><i>✳</i></div>
-          <p>Curiosity is part of the process.<br /><span>Johannesburg, GP · Everywhere, really</span></p>
+          <img className="about-portrait" src={portraitImage} alt="Portrait of Sisonke Miya" />
+          <p>Sisonke Miya<br /><span>Graphic designer &amp; developer</span></p>
         </div>
       </div>
       <div className="about-details">

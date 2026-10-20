@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ArrowIcon from './ArrowIcon';
+import ProjectImage from './ProjectImage';
 import projects from './projects';
 
 function ProjectCarousel() {
@@ -7,12 +8,16 @@ function ProjectCarousel() {
   const activeProject = projects[activeIndex];
 
   useEffect(() => {
+    if (activeProject.video) {
+      return undefined;
+    }
+
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
     }, 5000);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [activeProject.video]);
 
   function showPrevious() {
     setActiveIndex((currentIndex) => (currentIndex - 1 + projects.length) % projects.length);
@@ -32,9 +37,25 @@ function ProjectCarousel() {
           aria-label={`${activeIndex + 1} of ${projects.length}`}
           key={activeProject.number}
         >
-          <div className={`project-art ${activeProject.image ? 'project-art-image-slide' : activeProject.className}`}>
-            {activeProject.image ? (
-              <img className="project-art-image" src={activeProject.image} alt={`${activeProject.title} project artwork`} />
+          <div className={`project-art ${activeProject.image || activeProject.video ? 'project-art-image-slide' : activeProject.className}`}>
+            {activeProject.video ? (
+              <video
+                className="project-art-video"
+                src={activeProject.video}
+                aria-label={`${activeProject.title} video`}
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              />
+            ) : activeProject.image ? (
+              <ProjectImage
+                src={activeProject.image}
+                alt={activeProject.imageAlt ?? `${activeProject.title} project artwork`}
+                contained={activeProject.containImage}
+              />
             ) : (
               <>
                 <span className="project-art-mark">
