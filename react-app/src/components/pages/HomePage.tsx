@@ -1,6 +1,6 @@
 import ArrowIcon from '../ArrowIcon';
 import ProjectCarousel from '../ProjectCarousel';
-import heroProjectImage from '../../assets/Images/764842a6-6633-41d4-8e3a-de603a4c32bf.webp';
+import heroProjectImage from '../../assets/Images/8fc0be87-b9c6-4a60-8965-7c83bd61072a.webp';
 
 function FeaturedWork() {
   return (
@@ -45,10 +45,10 @@ function HomePage() {
           </div>
         </div>
         <div className="hero-visual">
-          <img className="hero-portrait-image" src={heroProjectImage} alt="Orange and cream poster with the headline “Want to practice graphic design?”" />
+          <img className="hero-portrait-image" src={heroProjectImage} alt="Portrait overlaid with white geometric shapes on a blue background" />
           <span className="hero-portrait-caption">
             <span className="availability-dot" />
-            Poster design · Typography
+            Art direction · Portrait
           </span>
         </div>
         <div className="hero-index"><span>01</span><span className="index-rule" /><span>04</span></div>
