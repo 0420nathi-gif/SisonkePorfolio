@@ -14,7 +14,7 @@ function ProjectCarousel() {
 
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
-    }, 5000);
+    }, 2000);
 
     return () => window.clearInterval(intervalId);
   }, [activeProject.video]);
