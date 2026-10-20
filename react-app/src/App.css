@@ -156,10 +156,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .large-copy { max-width: 480px; color: #777870; font-size: 15px; line-height: 1.8; }
 .about-card { padding: 15px; background: #e7e5dc; transition: background-color .25s ease, transform .25s ease; }
 .about-card:hover { background: #b7db6a; transform: translateY(-3px); }
-.about-card:hover > p span,
-.discipline-card:hover .discipline-number,
-.discipline-card:hover > p:not(.discipline-number),
-.tool-list li:hover span:last-child { color: #343a2a; }
 .about-portrait { display: block; width: 100%; height: 270px; object-fit: cover; object-position: center 42%; }
 .about-card > p { margin: 13px 0 1px; font-size: 11px; }
 .about-card > p span { color: #84857c; font-size: 9px; }
@@ -181,7 +177,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .discipline-card ul { display: grid; gap: 10px; padding: 18px 0 0; margin: 18px 0 0; border-top: 1px solid #deddd5; list-style: none; }
 .discipline-card li { position: relative; padding-left: 15px; font-size: 11px; line-height: 1.6; }
 .discipline-card li::before { content: ''; position: absolute; top: .65em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #91ad55; }
-.discipline-card:hover li::before { background: #343a2a; }
 .about-tools { padding-top: 69px; }
 .about-tools > .eyebrow { margin-bottom: 17px; }
 .about-tools > h2 { margin: 0 0 30px; font-size: clamp(38px, 5vw, 58px); font-weight: 500; line-height: 1.04; letter-spacing: -.065em; }
@@ -326,6 +321,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .theme-dark .about-card:hover,
 .theme-dark .discipline-card:hover,
 .theme-dark .tool-list li:hover { border-color: #b7db6a; background: #b7db6a; }
+.theme-dark .about-card:hover > p,
+.theme-dark .about-card:hover > p span,
+.theme-dark .discipline-card:hover,
+.theme-dark .discipline-card:hover .discipline-number,
+.theme-dark .discipline-card:hover > p:not(.discipline-number),
+.theme-dark .tool-list li:hover,
+.theme-dark .tool-list li:hover span:last-child { color: #253416; }
 .theme-dark .skill-list li,
 .theme-dark .contact-email { border-color: var(--line); }
 .theme-dark .discipline-card,
