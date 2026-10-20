@@ -121,6 +121,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .project-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 17px; }
 .project-meta h3 { margin: 0 0 5px; font-size: 16px; font-weight: 500; letter-spacing: -.03em; }
 .project-meta p { margin: 0; color: #85867e; font-size: 10px; }
+.project-summary { max-width: 440px; margin: 10px 0 0; color: #777870; font-size: 11px; line-height: 1.75; }
 .project-art-image { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
 .project-card:hover .project-art-image { transform: scale(1.025); }
 .project-image-trigger { display: block; width: 100%; height: 100%; padding: 0; overflow: hidden; border: 0; background: transparent; cursor: zoom-in; }
@@ -295,6 +296,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #77943a; outline-offs
 .theme-dark .hero-note,
 .theme-dark .hero-index,
 .theme-dark .project-meta p,
+.theme-dark .project-summary,
 .theme-dark .carousel-count,
 .theme-dark .large-copy,
 .theme-dark .about-card > p span,

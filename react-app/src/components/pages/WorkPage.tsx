@@ -7,7 +7,7 @@ function WorkPage() {
       <p className="eyebrow"><span className="eyebrow-line" /> Selected work · 2022—2026</p>
       <div className="work-heading">
         <h1 className="page-title">Work that makes<br />you <span className="serif-word">look twice.</span></h1>
-        <p>A collection of collaborations, big ideas, and details that made it all click.</p>
+        <p>A collection of visual explorations, graphic design, editorial layouts, and moving-image work.</p>
       </div>
       <ProjectGrid />
       <Callout />

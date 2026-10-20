@@ -49,6 +49,7 @@ function ProjectGrid({ limit }: ProjectGridProps) {
             </div>
             <span className="project-arrow"><ArrowIcon diagonal /></span>
           </div>
+          <p className="project-summary">{project.summary}</p>
         </article>
       ))}
     </div>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ed"/>
+  <rect x="790" y="0" width="410" height="630" fill="#c6f36a"/>
+  <path d="M875 165h235M875 195h170M875 225h205M875 405h235M875 435h170M875 465h205" stroke="#22231f" stroke-opacity=".14" stroke-width="2"/>
+  <text x="90" y="125" fill="#777870" font-family="Arial, sans-serif" font-size="20" letter-spacing="4">GRAPHIC DESIGNER &amp; DEVELOPER</text>
+  <text x="82" y="320" fill="#22231f" font-family="Arial, sans-serif" font-size="108" font-weight="700" letter-spacing="-8">Sisonke Miya</text>
+  <text x="95" y="390" fill="#4f5149" font-family="Arial, sans-serif" font-size="31">Thoughtful design for a changing world.</text>
+  <text x="875" y="330" fill="#22231f" font-family="Arial, sans-serif" font-size="31" font-weight="700">SM.</text>
+  <text x="875" y="370" fill="#22231f" font-family="Arial, sans-serif" font-size="17" letter-spacing="2">JOHANNESBURG · EVERYWHERE</text>
+</svg>
