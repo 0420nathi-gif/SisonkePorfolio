@@ -1,23 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ArrowIcon from './ArrowIcon';
 import ProjectImage from './ProjectImage';
-import projects from './projects';
+import projects, { getProjectHref } from './projects';
 
 function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
-
-  useEffect(() => {
-    if (activeProject.video) {
-      return undefined;
-    }
-
-    const intervalId = window.setInterval(() => {
-      setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
-    }, 2000);
-
-    return () => window.clearInterval(intervalId);
-  }, [activeProject.video]);
 
   function showPrevious() {
     setActiveIndex((currentIndex) => (currentIndex - 1 + projects.length) % projects.length);
@@ -44,11 +32,10 @@ function ProjectCarousel() {
                 src={activeProject.video}
                 aria-label={`${activeProject.title} video`}
                 controls
-                autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               />
             ) : activeProject.image ? (
               <ProjectImage
@@ -68,10 +55,16 @@ function ProjectCarousel() {
           </div>
           <div className="project-meta">
             <div>
-              <h3>{activeProject.title}</h3>
+              <h3><a href={getProjectHref(activeProject)}>{activeProject.title}</a></h3>
               <p>{activeProject.category}</p>
             </div>
-            <span className="project-arrow"><ArrowIcon diagonal /></span>
+            <a
+              className="project-arrow"
+              href={getProjectHref(activeProject)}
+              aria-label={`Read the ${activeProject.title} case study`}
+            >
+              <ArrowIcon diagonal />
+            </a>
           </div>
         </article>
       </div>

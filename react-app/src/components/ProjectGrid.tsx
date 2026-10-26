@@ -1,6 +1,6 @@
 import ArrowIcon from './ArrowIcon';
 import ProjectImage from './ProjectImage';
-import projects from './projects';
+import projects, { getProjectHref } from './projects';
 
 type ProjectGridProps = {
   limit?: number;
@@ -20,11 +20,10 @@ function ProjectGrid({ limit }: ProjectGridProps) {
                 src={project.video}
                 aria-label={`${project.title} video`}
                 controls
-                autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               />
             ) : project.image ? (
               <ProjectImage
@@ -44,10 +43,16 @@ function ProjectGrid({ limit }: ProjectGridProps) {
           </div>
           <div className="project-meta">
             <div>
-              <h3>{project.title}</h3>
+              <h3><a href={getProjectHref(project)}>{project.title}</a></h3>
               <p>{project.category}</p>
             </div>
-            <span className="project-arrow"><ArrowIcon diagonal /></span>
+            <a
+              className="project-arrow"
+              href={getProjectHref(project)}
+              aria-label={`Read the ${project.title} case study`}
+            >
+              <ArrowIcon diagonal />
+            </a>
           </div>
           <p className="project-summary">{project.summary}</p>
         </article>

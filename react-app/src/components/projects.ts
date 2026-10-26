@@ -10,6 +10,7 @@ import awardsPosterImage from '../assets/Images/99efc472-09d3-4a03-acbb-d9f7c761
 import textureTypographyImage from '../assets/Images/4799207a-d610-441a-bc74-e4edb7ed227b.webp';
 import yellowEditorialImage from '../assets/Images/353625a7-bffc-4d4b-b1d6-bf0637fe2398.webp';
 import streetSceneVideo from '../assets/Images/output.mp4';
+import { getRouteHref } from './pageConfig';
 
 export type Project = {
   number: string;
@@ -24,6 +25,17 @@ export type Project = {
   containImage?: boolean;
   video?: string;
 };
+
+export function getProjectSlug(project: Project): string {
+  return project.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function getProjectHref(project: Project): string {
+  return getRouteHref(`/work/${getProjectSlug(project)}/`);
+}
 
 const projects: Project[] = [
   {

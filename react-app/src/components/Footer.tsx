@@ -1,7 +1,9 @@
+import { getRouteHref } from './pageConfig';
+
 function Footer() {
   return (
     <footer className="site-footer page-shell">
-      <a className="wordmark" href="#home">
+      <a className="wordmark" href={getRouteHref('/')}>
         sm<span className="wordmark-dot">.</span>
       </a>
       <p>Made with care, and a little bit of coffee.</p>

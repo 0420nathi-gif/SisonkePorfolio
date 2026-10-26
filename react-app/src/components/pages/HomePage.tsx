@@ -1,5 +1,6 @@
 import ArrowIcon from '../ArrowIcon';
 import ProjectCarousel from '../ProjectCarousel';
+import { getRouteHref } from '../pageConfig';
 import heroProjectImage from '../../assets/Images/8fc0be87-b9c6-4a60-8965-7c83bd61072a.webp';
 
 function FeaturedWork() {
@@ -10,7 +11,7 @@ function FeaturedWork() {
           <p className="eyebrow"><span className="eyebrow-line" /> Selected projects</p>
           <h2>A few things<br />I’ve put into <span className="serif-word">the world.</span></h2>
         </div>
-        <a className="text-link" href="#work">See all projects <ArrowIcon /></a>
+        <a className="text-link" href={getRouteHref('/work/')}>See all projects <ArrowIcon /></a>
       </div>
       <ProjectCarousel />
     </section>
@@ -34,10 +35,10 @@ function HomePage() {
             responsive digital experiences.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#work">
+            <a className="button button-dark" href={getRouteHref('/work/')}>
               Explore my work <ArrowIcon />
             </a>
-            <a className="text-link" href="#about">A little about me</a>
+            <a className="text-link" href={getRouteHref('/about/')}>A little about me</a>
           </div>
           <div className="hero-note">
             <span className="note-spark">✳</span>
@@ -57,7 +58,7 @@ function HomePage() {
       <section className="intro-strip">
         <div className="page-shell intro-inner">
           <p>Good work starts with <em>good questions.</em></p>
-          <a href="#about" className="round-link" aria-label="Learn about Sisonke Miya">
+          <a href={getRouteHref('/about/')} className="round-link" aria-label="Learn about Sisonke Miya">
             <ArrowIcon diagonal />
           </a>
         </div>

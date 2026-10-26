@@ -1,4 +1,4 @@
-import type { Page } from './pageConfig';
+import { getRouteHref, type Page } from './pageConfig';
 
 type HeaderProps = {
   currentPage: Page;
@@ -10,14 +10,14 @@ type HeaderProps = {
 function Header({ currentPage, pages, darkMode, onToggleTheme }: HeaderProps) {
   return (
     <header className="site-header">
-      <a className="wordmark" href="#home" aria-label="Sisonke Miya home">
+      <a className="wordmark" href={getRouteHref('/')} aria-label="Sisonke Miya home">
         sm<span className="wordmark-dot">.</span>
       </a>
       <nav className="main-nav" aria-label="Main navigation">
         {pages.map((page) => (
           <a
             key={page.id}
-            href={`#${page.id}`}
+            href={getRouteHref(page.id === 'home' ? '/' : `/${page.id}/`)}
             className={currentPage === page.id ? 'nav-link active' : 'nav-link'}
             aria-current={currentPage === page.id ? 'page' : undefined}
           >
@@ -25,7 +25,7 @@ function Header({ currentPage, pages, darkMode, onToggleTheme }: HeaderProps) {
           </a>
         ))}
       </nav>
-      <a className="header-availability" href="#contact">
+      <a className="header-availability" href={getRouteHref('/contact/')}>
         <span className="availability-dot" />
         Available for select projects
       </a>
