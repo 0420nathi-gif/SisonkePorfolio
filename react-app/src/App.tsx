@@ -29,11 +29,27 @@ function App({ initialPath }: AppProps) {
   const startingLocation = getLocation(
     initialPath ?? (typeof window === 'undefined' ? '/' : window.location.pathname),
   );
+  const [splashState, setSplashState] = useState<'visible' | 'exiting' | 'hidden'>('visible');
   const [currentPage, setCurrentPage] = useState<Page>(startingLocation.page);
   const [projectSlug, setProjectSlug] = useState(startingLocation.projectSlug);
   const [darkMode, setDarkMode] = useState(false);
   const [themeReady, setThemeReady] = useState(false);
   const selectedProject = projects.find((project) => getProjectSlug(project) === projectSlug);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setSplashState('hidden');
+      return;
+    }
+
+    const exitTimer = window.setTimeout(() => setSplashState('exiting'), 1200);
+    const removeTimer = window.setTimeout(() => setSplashState('hidden'), 1750);
+
+    return () => {
+      window.clearTimeout(exitTimer);
+      window.clearTimeout(removeTimer);
+    };
+  }, []);
 
   useEffect(() => {
     // Keep client-side back/forward navigation in sync with the route derived from the URL.
@@ -59,28 +75,44 @@ function App({ initialPath }: AppProps) {
   }, [darkMode, themeReady]);
 
   return (
-    <div className={darkMode ? 'site theme-dark' : 'site'}>
-      <a className="skip-link" href="#main-content">Skip to content</a>
-      <Header
-        currentPage={currentPage}
-        pages={pages}
-        darkMode={darkMode}
-        onToggleTheme={() => setDarkMode((isDarkMode) => !isDarkMode)}
-      />
-      <main id="main-content" key={currentPage} tabIndex={-1}>
-        {selectedProject ? (
-          <ProjectDetailPage project={selectedProject} />
-        ) : (
-          <>
-            {currentPage === 'home' && <HomePage />}
-            {currentPage === 'about' && <AboutPage />}
-            {currentPage === 'work' && <WorkPage />}
-            {currentPage === 'contact' && <ContactPage />}
-          </>
-        )}
-      </main>
-      <Footer />
-    </div>
+    <>
+      {splashState !== 'hidden' && (
+        <div
+          className={`splash-screen${darkMode ? ' theme-dark' : ''}${splashState === 'exiting' ? ' is-exiting' : ''}`}
+          aria-hidden="true"
+        >
+          <div className="splash-content">
+            <p className="splash-kicker">Independent creative practice</p>
+            <span className="splash-wordmark">sm<span>.</span></span>
+            <div className="splash-progress"><span /></div>
+            <p className="splash-caption">Thoughtful design for a changing world</p>
+          </div>
+          <span className="splash-location">Johannesburg · South Africa</span>
+        </div>
+      )}
+      <div className={darkMode ? 'site theme-dark' : 'site'}>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <Header
+          currentPage={currentPage}
+          pages={pages}
+          darkMode={darkMode}
+          onToggleTheme={() => setDarkMode((isDarkMode) => !isDarkMode)}
+        />
+        <main id="main-content" key={currentPage} tabIndex={-1}>
+          {selectedProject ? (
+            <ProjectDetailPage project={selectedProject} />
+          ) : (
+            <>
+              {currentPage === 'home' && <HomePage />}
+              {currentPage === 'about' && <AboutPage />}
+              {currentPage === 'work' && <WorkPage />}
+              {currentPage === 'contact' && <ContactPage />}
+            </>
+          )}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
 
