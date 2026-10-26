@@ -3,11 +3,13 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
+import DesignApproachPage from './components/pages/DesignApproachPage';
 import HomePage from './components/pages/HomePage';
 import ProjectDetailPage from './components/pages/ProjectDetailPage';
 import WorkPage from './components/pages/WorkPage';
 import { pages, type Page } from './components/pageConfig';
 import projects, { getProjectSlug } from './components/projects';
+import { designApproaches } from './components/designApproaches';
 import './App.css';
 
 type AppProps = {
@@ -21,6 +23,9 @@ function getLocation(pathname: string): { page: Page; projectSlug?: string } {
     ? `/${pathname.slice(basePath.length)}`
     : pathname;
   const [, section, projectSlug] = routePath.split('/');
+  if (section === 'studio-notes') {
+    return { page: 'approach', projectSlug };
+  }
   const page = pages.find((item) => item.id === section)?.id ?? 'home';
   return { page, projectSlug: page === 'work' ? projectSlug : undefined };
 }
@@ -35,6 +40,7 @@ function App({ initialPath }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);
   const [themeReady, setThemeReady] = useState(false);
   const selectedProject = projects.find((project) => getProjectSlug(project) === projectSlug);
+  const selectedApproach = designApproaches.find((approach) => approach.slug === projectSlug);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -99,7 +105,9 @@ function App({ initialPath }: AppProps) {
           onToggleTheme={() => setDarkMode((isDarkMode) => !isDarkMode)}
         />
         <main id="main-content" key={currentPage} tabIndex={-1}>
-          {selectedProject ? (
+          {currentPage === 'approach' && selectedApproach ? (
+            <DesignApproachPage approach={selectedApproach} />
+          ) : selectedProject ? (
             <ProjectDetailPage project={selectedProject} />
           ) : (
             <>

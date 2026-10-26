@@ -1,4 +1,4 @@
-export type Page = 'home' | 'about' | 'work' | 'contact';
+export type Page = 'home' | 'about' | 'work' | 'contact' | 'approach';
 
 export function getRouteHref(path: string): string {
   // Prefix internal links with Vite's base path for deployments hosted below the domain root.

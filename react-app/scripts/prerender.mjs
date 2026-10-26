@@ -32,9 +32,10 @@ const server = await createServer({
 });
 
 try {
-  const [{ render }, { default: projects, getProjectSlug }] = await Promise.all([
+  const [{ render }, { default: projects, getProjectSlug }, { designApproaches }] = await Promise.all([
     server.ssrLoadModule('/src/entry-server.tsx'),
     server.ssrLoadModule('/src/components/projects.ts'),
+    server.ssrLoadModule('/src/components/designApproaches.ts'),
   ]);
   const shell = await readFile(path.join(outputRoot, 'index.html'), 'utf8');
   const manifest = JSON.parse(
@@ -78,6 +79,11 @@ try {
       path: `/work/${getProjectSlug(project)}/`,
       title: `${project.title} — Sisonke Miya`,
       description: project.summary,
+    })),
+    ...designApproaches.map((approach) => ({
+      path: `/studio-notes/${approach.slug}/`,
+      title: `${approach.title} — Studio Notes by Sisonke Miya`,
+      description: approach.introduction,
     })),
   ];
   const escapeHtml = (value) => value

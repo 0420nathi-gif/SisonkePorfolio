@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import ArrowIcon from './ArrowIcon';
 import ProjectImage from './ProjectImage';
+import { getDesignApproachHref } from './designApproaches';
+import { getRouteHref } from './pageConfig';
 import projects, { getProjectHref } from './projects';
 
 function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
+  const activeApproachHref = getDesignApproachHref(activeProject);
 
   function showPrevious() {
     // Wrap around so the carousel remains navigable at either end of the project list.
@@ -20,7 +23,9 @@ function ProjectCarousel() {
     <div className="project-carousel" role="region" aria-roledescription="carousel" aria-label="Selected projects">
       <div className="project-carousel-viewport" aria-live="polite">
         <article
-          className="project-card project-carousel-slide"
+          className={activeApproachHref
+            ? 'project-card project-carousel-slide has-secret-approach'
+            : 'project-card project-carousel-slide'}
           role="group"
           aria-roledescription="slide"
           aria-label={`${activeIndex + 1} of ${projects.length}`}
@@ -54,6 +59,15 @@ function ProjectCarousel() {
                 <span className="project-art-number">{activeProject.number}</span>
               </>
             )}
+            {activeApproachHref && (
+              <a
+                className="project-secret-hint"
+                href={getRouteHref(activeApproachHref)}
+                aria-label={`Discover the hidden design approach for ${activeProject.title}`}
+              >
+                <span>There’s a design note hidden here</span><ArrowIcon diagonal />
+              </a>
+            )}
           </div>
           <div className="project-meta">
             <div>
@@ -68,6 +82,14 @@ function ProjectCarousel() {
               <ArrowIcon diagonal />
             </a>
           </div>
+          {activeApproachHref && (
+            <a
+              className="project-secret-link"
+              href={getRouteHref(activeApproachHref)}
+            >
+              Explore a design approach <ArrowIcon diagonal />
+            </a>
+          )}
         </article>
       </div>
       <div className="project-carousel-controls">
