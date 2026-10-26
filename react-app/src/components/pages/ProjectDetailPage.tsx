@@ -32,11 +32,12 @@ function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             className="project-art-video"
             src={project.video}
             aria-label={`${project.title} video`}
+            autoPlay
             controls
             loop
             muted
             playsInline
-            preload="none"
+            preload="auto"
           />
         ) : project.image ? (
           <ProjectImage

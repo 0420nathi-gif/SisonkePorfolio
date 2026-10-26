@@ -41,6 +41,7 @@ try {
     await readFile(path.join(outputRoot, 'manifest.json'), 'utf8'),
   );
   const assetBase = siteUrl?.pathname ?? '/';
+  // Vite output may reference assets by source path or base-prefixed path; map both to built files.
   const assetUrls = new Map(
     Object.values(manifest)
       .filter((entry) => entry.src && entry.file)
@@ -90,6 +91,7 @@ try {
   };
 
   for (const route of routes) {
+    // Generate a complete HTML document per route so pages work before client-side hydration.
     let html = shell.replace(
       '<div id="root"></div>',
       `<div id="root">${render(route.path)}</div>`,

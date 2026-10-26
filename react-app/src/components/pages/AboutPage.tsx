@@ -53,13 +53,40 @@ function AboutPage() {
           <article className="discipline-card">
             <p className="discipline-number">02 / DEVELOPMENT</p>
             <h3>Turn thoughtful design into usable experiences.</h3>
-            <p>I build responsive, accessible interfaces that work across screen sizes and feel as considered in use as they do in a design file.</p>
+            <p>Development is more than writing code. It means understanding the people using a product, choosing a clear structure, and making sure the finished experience is reliable, inclusive, and easy to use.</p>
             <ul>
-              <li>Front-end development with HTML, CSS, and JavaScript</li>
-              <li>Interactive interfaces with React and TypeScript</li>
+              <li>Semantic HTML, modern CSS, and JavaScript</li>
+              <li>Interactive, typed interfaces with React and TypeScript</li>
               <li>Responsive layouts and reusable components</li>
-              <li>Accessibility, performance, and browser testing</li>
+              <li>Accessibility, debugging, and cross-browser testing</li>
             </ul>
+          </article>
+        </div>
+      </section>
+      {/* Keep process and tools separate from the development skills listed above. */}
+      <section className="developer-practice" aria-labelledby="developer-practice-heading">
+        <p className="eyebrow"><span className="eyebrow-line" /> The work behind the interface</p>
+        <h2 id="developer-practice-heading">Good development happens<br /><span className="serif-word">before and after the code.</span></h2>
+        <p className="developer-practice-intro">
+          A polished website is the result of many considered decisions—not just how it looks,
+          but how it behaves, how it adapts, and how easy it is to maintain. I carry the design
+          intent through each step, from the first layout to the final browser check.
+        </p>
+        <div className="developer-practice-grid">
+          <article>
+            <p className="discipline-number">01 / PLAN</p>
+            <h3>Start with people and purpose.</h3>
+            <p>I turn goals and content into clear page structure and user flows. I think about readable hierarchy, keyboard navigation, and accessibility from the start—not as a last-minute add-on.</p>
+          </article>
+          <article>
+            <p className="discipline-number">02 / BUILD</p>
+            <h3>Make it responsive and maintainable.</h3>
+            <p>I use semantic HTML, CSS, JavaScript, React, and TypeScript to build reusable interface pieces. Thoughtful component structure keeps a site consistent and makes future updates easier.</p>
+          </article>
+          <article>
+            <p className="discipline-number">03 / REFINE</p>
+            <h3>Test the details in real browsers.</h3>
+            <p>I check layouts across screen sizes, exercise interactions, and use browser developer tools to find and fix issues. Iteration helps improve usability, accessibility, and performance before launch.</p>
           </article>
         </div>
       </section>
@@ -71,6 +98,10 @@ function AboutPage() {
           <li><span>Affinity</span><span>Graphic design</span></li>
           <li><span>Canva</span><span>Visual content</span></li>
           <li><span>Figma</span><span>Interface design</span></li>
+          <li><span>React + TypeScript</span><span>Interactive interfaces</span></li>
+          <li><span>HTML + CSS + JavaScript</span><span>Front-end foundations</span></li>
+          <li><span>Git + GitHub</span><span>Version control</span></li>
+          <li><span>Browser DevTools</span><span>Debugging and testing</span></li>
         </ul>
       </section>
       <Callout />

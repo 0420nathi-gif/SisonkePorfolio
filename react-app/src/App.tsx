@@ -7,7 +7,6 @@ import HomePage from './components/pages/HomePage';
 import ProjectDetailPage from './components/pages/ProjectDetailPage';
 import WorkPage from './components/pages/WorkPage';
 import { pages, type Page } from './components/pageConfig';
-import TrailingCursor from './components/TrailingCursor';
 import projects, { getProjectSlug } from './components/projects';
 import './App.css';
 
@@ -17,6 +16,7 @@ type AppProps = {
 
 function getLocation(pathname: string): { page: Page; projectSlug?: string } {
   const basePath = import.meta.env.BASE_URL;
+  // Strip Vite's deployment prefix so routes resolve the same on root and subpath hosting.
   const routePath = basePath !== '/' && pathname.startsWith(basePath)
     ? `/${pathname.slice(basePath.length)}`
     : pathname;
@@ -36,6 +36,7 @@ function App({ initialPath }: AppProps) {
   const selectedProject = projects.find((project) => getProjectSlug(project) === projectSlug);
 
   useEffect(() => {
+    // Keep client-side back/forward navigation in sync with the route derived from the URL.
     const syncLocation = () => {
       const location = getLocation(window.location.pathname);
       setCurrentPage(location.page);
@@ -47,6 +48,7 @@ function App({ initialPath }: AppProps) {
   }, []);
 
   useEffect(() => {
+    // Read the saved preference after hydration before persisting state, avoiding an initial overwrite.
     setDarkMode(window.localStorage.getItem('portfolio-theme') === 'dark');
     setThemeReady(true);
   }, []);
@@ -58,14 +60,14 @@ function App({ initialPath }: AppProps) {
 
   return (
     <div className={darkMode ? 'site theme-dark' : 'site'}>
-      <TrailingCursor />
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header
         currentPage={currentPage}
         pages={pages}
         darkMode={darkMode}
         onToggleTheme={() => setDarkMode((isDarkMode) => !isDarkMode)}
       />
-      <main key={currentPage}>
+      <main id="main-content" key={currentPage} tabIndex={-1}>
         {selectedProject ? (
           <ProjectDetailPage project={selectedProject} />
         ) : (

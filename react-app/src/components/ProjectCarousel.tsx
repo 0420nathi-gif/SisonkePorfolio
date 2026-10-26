@@ -8,6 +8,7 @@ function ProjectCarousel() {
   const activeProject = projects[activeIndex];
 
   function showPrevious() {
+    // Wrap around so the carousel remains navigable at either end of the project list.
     setActiveIndex((currentIndex) => (currentIndex - 1 + projects.length) % projects.length);
   }
 
@@ -31,11 +32,12 @@ function ProjectCarousel() {
                 className="project-art-video"
                 src={activeProject.video}
                 aria-label={`${activeProject.title} video`}
+                autoPlay
                 controls
                 loop
                 muted
                 playsInline
-                preload="none"
+                preload="auto"
               />
             ) : activeProject.image ? (
               <ProjectImage

@@ -28,6 +28,7 @@ function ProjectImage({ src, alt, contained = false }: ProjectImageProps) {
         ref={dialogRef}
         aria-label={`Full-size image: ${alt}`}
         onClick={(event) => {
+          // Clicking the backdrop closes the lightbox; clicks inside it leave the image open.
           if (event.target === event.currentTarget) {
             dialogRef.current?.close();
           }

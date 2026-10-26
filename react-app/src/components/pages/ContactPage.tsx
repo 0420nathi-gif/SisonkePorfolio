@@ -13,6 +13,7 @@ function ContactPage() {
       'Project details:',
       formData.get('project'),
     ].join('\n');
+    // Compose the enquiry in the visitor's email app; this form does not send data to a server.
     window.location.href = `mailto:0420nathi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 

@@ -26,6 +26,7 @@ export type Project = {
   video?: string;
 };
 
+// Project detail routes are derived from titles so links and prerendered paths stay consistent.
 export function getProjectSlug(project: Project): string {
   return project.title
     .toLowerCase()

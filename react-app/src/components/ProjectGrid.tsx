@@ -19,11 +19,12 @@ function ProjectGrid({ limit }: ProjectGridProps) {
                 className="project-art-video"
                 src={project.video}
                 aria-label={`${project.title} video`}
+                autoPlay
                 controls
                 loop
                 muted
                 playsInline
-                preload="none"
+                preload="auto"
               />
             ) : project.image ? (
               <ProjectImage
